@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Link Redirect</title>
+    <script>
+        // Function to redirect to a random YouTube URL
+        function redirectToRandomLink() {
+            // List of YouTube URLs
+            const links = [
+                'https://youtu.be/6GLq_dxlvd8?si=NYV7lmbrcrIynHP1',
+                'https://youtu.be/ClVKKHhryrE?si=QSkVR3UyxWyaUTsN',
+                'https://youtu.be/6u71FIGLO7k?si=F_nHXl3tNFn-_K38',
+                'https://youtu.be/V96rh7HdI3c?si=Rta-KTU2_3WAfFp7',
+                'https://youtu.be/sOgFTj9c2uA?si=be-hANfyaFw3YI3j',
+                'https://youtu.be/O-TGmbjoKkI?si=LElAIhAtmmHXsh3t',
+                'https://youtu.be/SJ190J3RJBE?si=ztzkWFsKcpDwoXvC'
+            ];
+            
+            // Generate a random index to pick a YouTube URL
+            const randomIndex = Math.floor(Math.random() * links.length);
+            
+            // Redirect to the randomly selected URL
+            window.location.href = links[randomIndex];
+        }
+
+        // Override the click event to trigger random redirect
+        window.onload = function() {
+            const githubLink = document.getElementById("githubLink");
+            githubLink.addEventListener("click", function(event) {
+                event.preventDefault(); // Prevent the default action of the link
+                redirectToRandomLink(); // Trigger the random redirect
+            });
+        }
+    </script>
+</head>
+<body>
+    <h1>Click the link to go to a random YouTube video</h1>
+    
+    <!-- GitHub link that will trigger the random redirect -->
+    <p>
+        Click the link below to be randomly redirected to a YouTube video:
+    </p>
+    
+    <a href="https://github.com/itsrachelli/obscure-jewish-music-generator" id="githubLink">Visit my GitHub repository</a>
+</body>
+</html>
